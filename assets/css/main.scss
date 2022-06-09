@@ -1,0 +1,55 @@
+@import 'variables';
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+html,
+body {
+  font-size: 16px;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 20px 0 0;
+}
+
+blockquote {
+  font-style: italic;
+}
+
+body {
+  line-height: 1.7;
+  background-color: $bg-color;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+}
+
+a:hover {
+}
+
+a:active {
+}
+
+header {
+  padding: 20px 0;
+
+  a {
+    font-weight: bold;
+  }
+}
+
+.wrap {
+  position: relative;
+  max-width: 750px;
+  margin: 0 auto;
+}
