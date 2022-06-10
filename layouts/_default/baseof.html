@@ -24,16 +24,14 @@
     <link href="{{ $scss.RelPermalink }}" rel="stylesheet" />
   </head>
   <body>
-    <header class="wrap">
-      <a href="{{ .Site.Params.baseurl }}">noelukwa.com</a>
+    <header>
+      <nav class="wrap">
+        <a href="{{ .Site.Params.baseurl }}" id="main">noelukwa</a>
 
-      <nav>
         <a href="#">posts</a>
-        <a href="#">playground</a>
+        <a href="#">projects</a>
 
-        <span id="rss">
-          <a href="">rss</a>
-        </span>
+        <a href="" id="rss">rss</a>
       </nav>
     </header>
     <main>{{- block "main" . }}{{- end }}</main>
