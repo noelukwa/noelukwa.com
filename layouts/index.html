@@ -19,20 +19,13 @@
     <h2>Latest Posts</h2>
 
     <ul>
+      {{ $posts := where .Site.RegularPages "Section" "in" (slice "posts") }} {{
+      range $posts }}
       <li>
-        <a href="#">How to configure truffle : a tale of sorrow.</a>
-        <span> 27' Jun</span>
+        <a href="{{.Permalink}}">{{.Title}}</a>
+        <span>{{.Date.Format "02, Jan 2006"}}</span>
       </li>
-
-      <li>
-        <a href="#">Understanding NFT contract</a>
-        <span> 27' Dec</span>
-      </li>
-
-      <li>
-        <a href="#">Building secure servers in golang.</a>
-        <span> 27' Jul</span>
-      </li>
+      {{ end }}
     </ul>
   </div>
 </section>
