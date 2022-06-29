@@ -10,23 +10,12 @@
         href="http://twitter.com/noelukwa"
         target="_blank"
         rel="noopener noreferrer"
-        >@noelukwa</a
+        >noelukwa</a
       >
     </p>
   </div>
-
-  <div class="posts">
-    <h2>Latest Posts</h2>
-
-    <ul>
-      {{ $posts := where .Site.RegularPages "Section" "in" (slice "posts") }} {{
-      range $posts }}
-      <li>
-        <a href="{{.Permalink}}">{{.Title}}</a>
-        <span>{{.Date.Format "02, Jan 2006"}}</span>
-      </li>
-      {{ end }}
-    </ul>
-  </div>
+  {{ $posts := where .Site.RegularPages "Section" "in" (slice "posts") }} {{
+  partial "post_list.html" (dict "posts" ($posts | first 5) "title" "Latests P")
+  }}
 </section>
 {{ end }}

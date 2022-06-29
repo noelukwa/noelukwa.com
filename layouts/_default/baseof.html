@@ -1,39 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="{{ if gt (len .Description) 0 }}{{ .Description }}{{ else }}{{ if gt (len .Summary) 0 }}{{ .Summary }}{{ else }}{{.Site.Params.description}}{{ end }}{{ end }}"
-    />
+<html lang="{{ .Site.Language }}" dir="{{ .Language.LanguageDirection | default "auto" }}">
 
-    <title>
-      {{ if .Params.Title }}{{ .Params.Title }}{{ else }}{{ .Site.Title }}{{ end
-      }}
-    </title>
+<head>
+    {{- partial "head.html" . }}
+</head>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
+<body class=""  id="top">
 
-    {{ $scss := resources.Get "css/main.scss" | resources.ToCSS |
-    resources.Minify }}
-    <link href="{{ $scss.RelPermalink }}" rel="stylesheet" />
-  </head>
-  <body>
-    <header>
-      <nav class="wrap">
-        <a href="/" id="main">noelukwa</a>
+    <main class="main">
+        {{- block "main" . }}{{ end }}
+    </main>
+</body>
 
-        <a href="/posts">posts</a>
-        <a href="/projects">projects</a>
-
-        <a href="" id="rss">rss</a>
-      </nav>
-    </header>
-    <main>{{- block "main" . }}{{- end }}</main>
-  </body>
 </html>
