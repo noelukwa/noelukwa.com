@@ -1,39 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <meta name="theme-color" content="#3a74d2" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" content="#3a74d2" />
 
-    <link rel="canonical" href="{{ .Permalink }}" />
+<link rel="canonical" href="{{ .Permalink }}" />
 
-    {{ template "_internal/opengraph.html" . }}
+{{ template "_internal/opengraph.html" . }}
 
-    <title>
-      {{ if .Params.Title }}{{ .Params.Title }}{{ else }}{{ .Site.Title }}{{ end
-      }}
-    </title>
+<title>
+  {{ if .Params.Title }}{{ .Params.Title }}{{ else }}{{ .Site.Title }}{{ end }}
+  | {{.Title}}
+</title>
 
-    {{ $scss := resources.Get "css/main.scss" | resources.ToCSS | resources.Minify }}
-    <link href="{{ $scss.RelPermalink }}" rel="stylesheet" />
+{{ $scss := resources.Get "css/main.scss" | resources.ToCSS | resources.Minify
+}}
+<link href="{{ $scss.RelPermalink }}" rel="stylesheet" />
 
-    {{ $syntax :=  resources.Get "css/zenburn.min.css"}}
+{{ $syntax := resources.Get "css/zenburn.min.css"}} {{- $stylesheet := (slice
+$scss $syntax) | resources.Concat "assets/css/stylesheet.css" }}
+<link
+  crossorigin="anonymous"
+  href="{{ $stylesheet.RelPermalink }}"
+  rel="preload stylesheet"
+  as="style"
+/>
 
-    {{- $stylesheet := (slice $scss $syntax) | resources.Concat "assets/css/stylesheet.css"  }}
-    <link crossorigin="anonymous" href="{{ $stylesheet.RelPermalink }}" rel="preload stylesheet" as="style">
-
-    {{- $highlight := slice (resources.Get "js/highlight.min.js") | resources.Concat "assets/js/highlight.js" }}
-    <script  crossorigin="anonymous" src="{{ $highlight.RelPermalink }}" onload="hljs.highlightAll();"></script>
-
-  </head>
-  <body>
-    <div class="container">
-      <div class="main">{{- block "main" . }}{{- end }}</div>
-    </div>
-  </body>
-</html>
+{{- $highlight := slice (resources.Get "js/highlight.min.js") | resources.Concat
+"assets/js/highlight.js" }}
+<script
+  crossorigin="anonymous"
+  src="{{ $highlight.RelPermalink }}"
+  onload="hljs.highlightAll();"
+></script>
