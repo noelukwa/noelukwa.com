@@ -1,9 +1,12 @@
 {{ define "main" }}
 <section class="wrap">
   <header class="post-header">
-    <h1>{{ .Title }}</h1>
-    <p>{{ .Date.Format "02, Jan 2006" }}</p>
+    <h2>{{ .Title }}</h2>
+    <p>pub. {{ .Date.Format "Jan 2, 2006" }}</p>
   </header>
+  <div class="summary">
+    <p>{{.Summary}}</p>
+  </div>
   <article class="post-content">{{ .Content }}</article>
 </section>
 {{ end }}

@@ -1,9 +1,13 @@
-{{define "main"}}
-<hr />
+{{define "main"}} {{partial "about.html" .}}
 <section>
-  <header>
-    <h2>The Afuture of the operating system</h2>
-  </header>
+  <h3>Latest Posts</h3>
+  <ul>
+    {{range where .Site.RegularPages "Section" "blog" }}
+    <li class="post-link">
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+      <span> {{ .Date.Format "Jan 2, 2006" }} </span>
+    </li>
+    {{end}}
+  </ul>
 </section>
-
 {{ end }}

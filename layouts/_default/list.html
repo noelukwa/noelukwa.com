@@ -1,6 +1,0 @@
-{{define "main"}}
-<section class="wrap">
-  {{ $posts := where .Pages "Section" "in" (slice "posts") }} {{ partial
-  "post_list.html" (dict "posts" ($posts | first 5) "title" "Posts") }}
-</section>
-{{end}}
