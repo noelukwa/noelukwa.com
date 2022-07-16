@@ -20,7 +20,7 @@ p,
 ul {
   margin: 0;
   padding: 0;
-  margin-bottom: 6px;
+  margin-bottom: 7px;
   font-size: 14px;
   font-weight: 400;
   list-style: none;
@@ -38,8 +38,6 @@ li a {
 
   &:hover {
     background: $highlight-color;
-
-    text-decoration: underline;
     color: #434547;
     border-radius: 3px;
   }
@@ -60,6 +58,7 @@ body {
   padding: 0 20px;
   margin-top: 40px;
 }
+
 h1 {
   margin-bottom: 6px;
   font-size: 28px;
@@ -101,13 +100,13 @@ nav a {
 
   &:hover {
     color: $highlight-color;
+    background: none;
   }
 }
 
 header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
 
   p {
     font-size: 12px;
@@ -119,7 +118,6 @@ header {
     width: 280px;
   }
   ul {
-    list-style: none;
     display: flex;
   }
 
@@ -127,6 +125,15 @@ header {
     display: flex;
     align-items: baseline;
     flex-wrap: wrap;
+
+    h1 {
+      font-family: 'Nanum Myeongjo', serif;
+      font-size: 80px;
+      line-height: 83px;
+      font-weight: normal;
+      letter-spacing: normal;
+      text-align: center;
+    }
 
     a {
       flex-shrink: 0;
@@ -139,7 +146,7 @@ article {
   flex-grow: 1;
   word-wrap: break-word;
 
-  p {
+  &.post-content p {
     font-size: 19px;
     line-height: 28px;
     font-weight: normal;
@@ -153,31 +160,48 @@ article {
   }
 }
 
-.summary {
-  margin-bottom: 20px;
-  padding: 15px 30px;
-  border-radius: 8px;
-  background-color: #878f9920;
-}
-
 .post-link {
   a {
-    color: inherit;
-    text-decoration: none;
     font-weight: 400;
-  }
-
-  &:hover {
-    color: $highlight-color;
-  }
-
-  &:active {
-    color: $highlight-color;
   }
 
   span {
     color: $secondary-text-color;
     font-weight: 400;
     font-size: 12px;
+  }
+}
+
+p.strong {
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+div.box {
+  margin: 30px 0;
+  border-top: 1px dotted $secondary-text-color;
+  border-bottom: 1px dotted $secondary-text-color;
+  width: 100%;
+
+  p {
+    font-family: 'Courier New';
+    font-size: 12px;
+    text-align: center;
+    color: var($secondary-text-color);
+    margin: 15px 0;
+  }
+}
+
+.summary {
+  margin-bottom: 40px;
+  padding: 15px 40px;
+  border-radius: 8px;
+
+  background-color: #878f9920;
+
+  p {
+    font-size: 12px;
+    font-weight: 400;
+    font-family: $primary-font;
   }
 }
