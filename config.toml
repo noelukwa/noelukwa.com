@@ -1,6 +1,14 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://noelukwa.com/'
 languageCode = 'en-us'
 title = 'Noel Ukwa'
+enableRobotsTXT = true
+rssLimit = 25
+
+[params]
+description = "Tales of a Gutsy Dev."
+images = ['https://res.cloudinary.com/ducv4qqga/image/upload/v1658016165/uche/blog_cover.png']
+
+
 
 [taxonomies]
   category = 'categories'
