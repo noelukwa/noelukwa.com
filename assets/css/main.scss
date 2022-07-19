@@ -26,6 +26,10 @@ ul {
   list-style: none;
 }
 
+button:not(:disabled) {
+  cursor: pointer;
+}
+
 li {
   margin-bottom: 8px;
 }

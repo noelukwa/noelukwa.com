@@ -1,5 +1,6 @@
-<footer>
+<footer class="wrapper">
   <div class="subscribe">
+    <p>Stay up to date with my work.</p>
     <form
       action="https://buttondown.email/api/emails/embed-subscribe/noelukwa"
       method="post"
@@ -7,9 +8,13 @@
       onsubmit="window.open('https://buttondown.email/noelukwa', 'popupwindow')"
       class="embeddable-buttondown-form"
     >
-      <label for="bd-email">Enter your email</label>
-      <input type="email" name="email" id="bd-email" />
-      <input type="submit" value="Subscribe" />
+      <input
+        type="email"
+        name="email"
+        id="bd-email"
+        placeholder="Email address"
+      />
+      <button type="submit">Subscribe</button>
     </form>
   </div>
 </footer>
