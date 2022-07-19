@@ -1,0 +1,14 @@
+<header class="wrapper">
+  <nav>
+    {{ if ne .IsHome true }}
+    <a href="/" class="home-anchor"> Noel Ukwa </a>
+    {{else}}
+    <h1>Noel Ukwa</h1>
+    <ul>
+      <li><a href="https://twitter.com/noelukwa">twitter</a></li>
+      <li><a href="https://github.com/noelukwa">github</a></li>
+      <li><a href="{{.Site.BaseURL}}index.xml">rss</a></li>
+    </ul>
+    {{ end }}
+  </nav>
+</header>
