@@ -1,0 +1,4 @@
+#mast {
+  font-size: clamp(1.5rem, -2.875rem + 14vw, 5rem);
+  line-height: clamp(1.5rem, -2.875rem + 14vw, 5rem);
+}

@@ -27,17 +27,17 @@
 </title>
 
 {{ $scss := resources.Get "css/main.scss" | resources.ToCSS | resources.Minify
-}}
-<link href="{{ $scss.RelPermalink }}" rel="stylesheet" />
-
-{{ $syntax := resources.Get "css/zenburn.min.css"}} {{- $stylesheet := (slice
-$scss $syntax) | resources.Concat "assets/css/stylesheet.css" }}
+}} {{ $fontcss := resources.Get "css/font.css" | resources.Minify }} {{ $syntax
+:= resources.Get "css/zenburn.min.css"}} {{- $stylesheet := (slice $scss
+$syntax) | resources.Concat "assets/css/stylesheet.css" }}
 <link
   crossorigin="anonymous"
   href="{{ $stylesheet.RelPermalink }}"
   rel="preload stylesheet"
   as="style"
 />
+
+<link href="{{ $fontcss.RelPermalink }}" rel="stylesheet" />
 
 {{- $highlight := slice (resources.Get "js/highlight.min.js") | resources.Concat
 "assets/js/highlight.js" }}
