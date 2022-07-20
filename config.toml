@@ -6,7 +6,7 @@ rssLimit = 25
 
 [params]
 description = "Tales of a Gutsy Dev."
-images = ['https://res.cloudinary.com/ducv4qqga/image/upload/v1658016165/uche/blog_cover.png']
+images = ["https://res.cloudinary.com/ducv4qqga/image/upload/v1658016165/uche/blog_cover.png"]
 
 
 
