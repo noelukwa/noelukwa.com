@@ -175,6 +175,15 @@ article {
     font-weight: 400;
     font-size: 12px;
   }
+
+
+  #list-tag::before {
+    content: '[';
+  }
+
+  #list-tag::after{
+    content: ']';
+  }
 }
 
 p.strong {

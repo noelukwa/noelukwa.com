@@ -3,11 +3,19 @@
   <h3>Latest Posts</h3>
   <ul>
     {{range where .Site.RegularPages "Section" "blog" }}
+    
     <li class="post-link">
+      {{with .Params.Categories}}
+      <span id="list-tag">{{ index . 0 }}</span>
+      {{end}}
       <a href="{{ .Permalink }}">{{ .Title }}</a>
       <span> {{ .Date.Format "Jan 2, 2006" }} </span>
     </li>
     {{end}}
   </ul>
 </section>
+
+
+
 {{ end }}
+ 
